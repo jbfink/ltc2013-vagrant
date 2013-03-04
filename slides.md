@@ -1,4 +1,2 @@
-[SLIDE]
-
-# This is a sample slide, my attempt to Showoff-ify Reveal.js.
+This is a sample slide, my attempt to Showoff-ify Reveal.js.
 
