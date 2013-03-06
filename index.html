@@ -41,15 +41,37 @@
       <p>t: <a href="http://twitter.com/adr">@adr</a></p>
       <p>g: <a href="http://github.com/jbfink">jbfink</a></p>
       </section>
+      <section>
+      <h2>Why develop with virtual machines?</h2>
+      <ul>
+	      <li class="fragment">Something</li>
+	      <li class="fragment">pithy</li>
+	      <li class="fragment">goes here</li>
+      </ul>
+      </section>
 
 
       <section>
         <section>
-          Vertical Slide 1
+	 <h2>A PLUG FOR RUBY</h2>
         </section>
 
         <section>
-          Vertical Slide 2
+	 <h2>CONFIG FILES</h2>
+	 <pre><code>
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant::Config.run do |config|
+  # All Vagrant configuration is done here. The most common configuration
+  # options are documented and commented below. For a complete reference,
+  # please see the online documentation at vagrantup.com.
+
+  # Every Vagrant virtual environment requires a box to build off of.
+  config.vm.box = "rubydev"
+
+  # The url from where the 'config.vm.box' box will be fetched if it
+</code></pre>
         </section>
       </section>
     </div>
