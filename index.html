@@ -100,7 +100,24 @@
 	 <aside class="notes">Usually when you make a new Vagrant machine, it comes pretty bare -- you can log into it but it doesn't have apache or gcc or php or ruby or whatever sort of dev environment you want. Chef is a way to define "recipes" or groups of recipes to make machines have different tasks. You could, say, have one recipe for apache, one for mysql, and one for php, and then after bringing up a Vagrant virtual machine, tell it install those three recipes and have a fully functioning php development machine.</aside>
         </section>
 	<section>
+<pre><code>
+package "apache2" do
+  package_name node['apache']['package']
+end
 
+service "apache2" do
+  case node['platform_family']
+  when "rhel", "fedora", "suse"
+    service_name "httpd"
+    # If restarted/reloaded too quickly httpd has a habit of failing.
+    # This may happen with multiple recipes notifying apache to restart - like
+    # during the initial bootstrap.
+    restart_command "/sbin/service httpd restart && sleep 1"
+    reload_command "/sbin/service httpd reload && sleep 1"
+</code></pre>
+	</section>
+	<section>
+	<h1>Any questions?</h1>
 	</section>
       </section>
     </div>
